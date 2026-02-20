@@ -16,8 +16,9 @@ from sklearn.metrics import (
 
 # Load CSV files
 thermal_df = pd.read_csv("igbt_thermal_rf_datasetv2.csv")
-dynamic_df = pd.read_csv("igbt_dynamic_rf_datasetv2.csv")
-switching_df = pd.read_csv("igbt_switching_loss_rf_datasetv2.csv")
+dynamic_df = pd.read_csv("IGBT_dynamic_rf_datasetv3.csv")
+switching_df = pd.read_csv("IGBT_switching_loss_rf_datasetv3.csv")
+#combined_df = pd.read_csv("")
 
 # Strip whitespace from column names (very important)
 thermal_df.columns = thermal_df.columns.str.strip()
@@ -42,7 +43,6 @@ y_encoded = label_encoder.fit_transform(y)
 encoding_map = dict(zip(label_encoder.classes_,
                           label_encoder.transform(label_encoder.classes_)))
 print("Label encoding:", encoding_map)
-
 
 # Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
@@ -111,6 +111,6 @@ plt.savefig("igbt_rf_feature_importance.png", dpi=300)
 plt.show()
 
 # Save the Model
-print("saving to", os.getcwd())
-joblib.dump(rf, "rf_igbt_fault_model.pkl")
-joblib.dump(label_encoder, "label_encoder.pkl")
+#print("saving to", os.getcwd())
+#joblib.dump(rf, "rf_igbt_fault_model.pkl")
+#joblib.dump(label_encoder, "label_encoder.pkl")
