@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, ConfusionMatrixDisplay
 
 # Load combined dataset
-df = pd.read_csv("IGBT_combined_rf_datasetv3.csv")
+df = pd.read_csv("IGBT_merged_clean3.csv")
 
 # Strip whitespace (good practice)
 df.columns = df.columns.str.strip()
